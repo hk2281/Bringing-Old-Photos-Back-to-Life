@@ -22,11 +22,11 @@ RUN cd Face_Detection/ &&\
   cd ../ 
 
 RUN cd Face_Enhancement/ &&\
-  wget https://facevc.blob.core.windows.net/zhanbo/old_photo/pretrain/Face_Enhancement/checkpoints.zip &&\
+  wget https://huggingface.co/hk2281/dlib/resolve/main/F_Echeckpoints.zip -O checkpoints.zip &&\
   unzip checkpoints.zip &&\
   cd ../ &&\
   cd Global/ &&\
-  wget https://facevc.blob.core.windows.net/zhanbo/old_photo/pretrain/Global/checkpoints.zip &&\
+  wget https://huggingface.co/hk2281/dlib/resolve/main/Gl_checkpoints.zip?download=true -O checkpoints.zip &&\
   unzip checkpoints.zip &&\
   rm -f checkpoints.zip &&\
   cd ../
