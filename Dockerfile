@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.1-base-ubuntu20.04
+FROM ubuntu:20.04
 
 RUN apt update && DEBIAN_FRONTEND=noninteractive apt install git bzip2 wget unzip python3-pip python3-dev cmake libgl1-mesa-dev python-is-python3 libgtk2.0-dev -yq
 ADD . /app
@@ -13,8 +13,9 @@ RUN cd Global/detection_models &&\
   cp -rf Synchronized-BatchNorm-PyTorch/sync_batchnorm . &&\
   cd ../../
 
+COPY shape_predictor_68_face_landmarks.dat.bz2 /Face_Detection/shape_predictor_68_face_landmarks.dat.bz2
+
 RUN cd Face_Detection/ &&\
-  wget http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2 &&\
   bzip2 -d shape_predictor_68_face_landmarks.dat.bz2 &&\
   cd ../ 
 
