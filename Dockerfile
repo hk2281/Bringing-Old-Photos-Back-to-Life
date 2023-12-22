@@ -45,4 +45,4 @@ RUN cd SPADE/ && pip3 install -r requirements.txt
 
 RUN cd ..
 
-CMD ["uvicorn", "src.app:app", "--workers", "4", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "src.main:app", "--workers", "4", "--host", "0.0.0.0", "--port", "8000"]
