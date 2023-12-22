@@ -12,3 +12,8 @@ opencv-python
 einops
 PySimpleGUI
 matplotlib
+loguru
+cbfa
+fastapi
+uvicorn
+firebase_admin

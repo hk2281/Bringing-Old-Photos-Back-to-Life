@@ -37,7 +37,7 @@ RUN pip3 install numpy
 
 RUN pip3 install dlib
 
-RUN pip3 install -r r.txt
+RUN pip3 install -r requirements.txt
 
 RUN git clone https://github.com/NVlabs/SPADE.git
 
