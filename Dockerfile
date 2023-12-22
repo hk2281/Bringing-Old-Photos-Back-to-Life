@@ -32,8 +32,6 @@ RUN cd Face_Enhancement/ &&\
   cd ../
 
 
-RUN python3 -m venv venv
-ENV PATH="/app/venv/bin:$PATH"
 
 RUN pip3 install numpy
 
