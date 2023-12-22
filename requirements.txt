@@ -17,3 +17,4 @@ cbfa
 fastapi
 uvicorn
 firebase_admin
+python-multipart
