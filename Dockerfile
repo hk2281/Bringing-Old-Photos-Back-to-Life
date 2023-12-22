@@ -31,11 +31,15 @@ RUN cd Face_Enhancement/ &&\
   rm -f checkpoints.zip &&\
   cd ../
 
+
+RUN python3 -m venv venv
+ENV PATH="/app/venv/bin:$PATH"
+
 RUN pip3 install numpy
 
 RUN pip3 install dlib
 
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r r.txt
 
 RUN git clone https://github.com/NVlabs/SPADE.git
 
@@ -43,4 +47,4 @@ RUN cd SPADE/ && pip3 install -r requirements.txt
 
 RUN cd ..
 
-CMD ["python3", "run.py"]
+CMD ["uvicorn", "src.app:app", "--workers", "4", "--host", "0.0.0.0", "--port", "8000"]
